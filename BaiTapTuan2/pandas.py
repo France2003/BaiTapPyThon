@@ -1,11 +1,11 @@
 import pandas as pd
-my_data = {
+input_dict = {
     "Tên" : ['Pháp', 'Huy', 'Nhân', 'Hóa', 'Đạt', 'Quyền', 'Nhi', 'Diện', 'Anh', 'Bảo'],
     "Tuổi": [21, 22, 23, 24, 25, 26, 27, 21, 20, 19],
     "Giới tính": ['Nam', 'Nam', 'Nam', 'Nam', 'Nam', 'Nam', 'Nữ', 'Nữ', 'Nam', 'Nam'],
     "Điểm tổng kết": [8.5, 4.0, 8.2, 3.4, 8.0, 4.5, 3.2, 2.8, 5.5, 7.0]
 }
-df_students = pd.DataFrame(my_data)
+df_students = pd.DataFrame(input_dict)
 # Toàn bộ dữ liệu của bảng
 print("* Toàn bộ dữ liệu của bảng")
 print(df_students)
@@ -37,6 +37,15 @@ print("")
 print("* Danh sách sinh viên theo điểm tổng kết giảm dần")
 df_descending = df_students.sort_values("Điểm tổng kết", ascending=False)
 print(df_descending)
+
+# lọc giới tính nam và nữ
+male_student = df_students[df_students["Giới tính"] == "Nam"]
+print("Nam")
+print(male_student)
+female_student = df_students[df_students["Giới tính"] == "Nữ"]
+print("Nữ")
+print(female_student)
+
 
 
 
